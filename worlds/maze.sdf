@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+  <world name="maze_world">
+
+    <physics type="ignored">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre</render_engine>
+    </plugin>
+
+    <light name="sun" type="directional">
+      <pose>0 0 15 0 0 0</pose>
+      <direction>-0.5 0.5 -1</direction>
+      <diffuse>1 1 1 1</diffuse>
+    </light>
+
+    <model name="ground">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><plane><normal>0 0 1</normal><size>50 50</size></plane></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><plane><normal>0 0 1</normal><size>50 50</size></plane></geometry>
+          <material><ambient>0.7 0.7 0.7 1</ambient><diffuse>0.7 0.7 0.7 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="final_spiral_maze">
+      <static>true</static>
+      <link name="walls">
+        <material>
+          <ambient>0.05 0.05 0.05 1</ambient>
+          <diffuse>0.05 0.05 0.05 1</diffuse>
+        </material>
+
+        <visual name="out_top"><pose>1.5 6 0.5 0 0 0</pose><geometry><box><size>9 0.2 1.2</size></box></geometry></visual>
+        <visual name="out_bot"><pose>-1.5 -6 0.5 0 0 0</pose><geometry><box><size>9 0.2 1.2</size></box></geometry></visual>
+        <visual name="out_left"><pose>-6 0 0.5 0 0 0</pose><geometry><box><size>0.2 12 1.2</size></box></geometry></visual>
+        <visual name="out_right"><pose>6 0 0.5 0 0 0</pose><geometry><box><size>0.2 12 1.2</size></box></geometry></visual>
+
+        <visual name="mid_top"><pose>-1 3.5 0.5 0 0 0</pose><geometry><box><size>10 0.2 1.2</size></box></geometry></visual>
+        <visual name="mid_bot"><pose>1 -3.5 0.5 0 0 0</pose><geometry><box><size>10 0.2 1.2</size></box></geometry></visual>
+        <visual name="mid_left"><pose>-3.5 -1 0.5 0 0 0</pose><geometry><box><size>0.2 5 1.2</size></box></geometry></visual>
+        <visual name="mid_right"><pose>3.5 1 0.5 0 0 0</pose><geometry><box><size>0.2 5 1.2</size></box></geometry></visual>
+
+        <visual name="center_L1_v"><pose>-1.5 0.5 0.5 0 0 0</pose><geometry><box><size>0.2 2 1.2</size></box></geometry></visual>
+        <visual name="center_L1_h"><pose>-0.5 1.5 0.5 0 0 0</pose><geometry><box><size>2 0.2 1.2</size></box></geometry></visual>
+
+        <visual name="center_L2_v"><pose>1.5 -0.5 0.5 0 0 0</pose><geometry><box><size>0.2 2 1.2</size></box></geometry></visual>
+        <visual name="center_L2_h"><pose>0.5 -1.5 0.5 0 0 0</pose><geometry><box><size>2 0.2 1.2</size></box></geometry></visual>
+
+        <collision name="c1"><pose>1.5 6 0.5 0 0 0</pose><geometry><box><size>9 0.2 1.2</size></box></geometry></collision>
+        <collision name="c2"><pose>-1.5 -6 0.5 0 0 0</pose><geometry><box><size>9 0.2 1.2</size></box></geometry></collision>
+        <collision name="c3"><pose>-6 0 0.5 0 0 0</pose><geometry><box><size>0.2 12 1.2</size></box></geometry></collision>
+        <collision name="c4"><pose>6 0 0.5 0 0 0</pose><geometry><box><size>0.2 12 1.2</size></box></geometry></collision>
+        <collision name="c5"><pose>-1.5 0.5 0.5 0 0 0</pose><geometry><box><size>0.2 2 1.2</size></box></geometry></collision>
+        <collision name="c6"><pose>-0.5 1.5 0.5 0 0 0</pose><geometry><box><size>2 0.2 1.2</size></box></geometry></collision>
+        <collision name="c7"><pose>1.5 -0.5 0.5 0 0 0</pose><geometry><box><size>0.2 2 1.2</size></box></geometry></collision>
+        <collision name="c8"><pose>0.5 -1.5 0.5 0 0 0</pose><geometry><box><size>2 0.2 1.2</size></box></geometry></collision>
+      </link>
+    </model>
+  </world>
+</sdf>
