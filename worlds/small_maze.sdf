@@ -33,44 +33,44 @@
     <model name="spiral_maze">
       <static>true</static>
       <link name="walls"> 
-        <visual name="out_top"><pose>0 5 0.5 0 0 0</pose><geometry><box><size>10.0 0.2 1</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
-        <collision name="out_top_c"><pose>0 5 0.5 0 0 0</pose><geometry><box><size>10.0 0.2 1</size></box></geometry></collision>
+        <visual name="out_top"><pose>0 5 0.5 0 0 0</pose><geometry><box><size>10.0 0.2 1.5</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
+        <collision name="out_top_c"><pose>0 5 0.5 0 0 0</pose><geometry><box><size>10.0 0.2 1.5</size></box></geometry></collision>
         
-        <visual name="out_bot"><pose>-0.8 -5 0.5 0 0 0</pose><geometry><box><size>8.4 0.2 1</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
-        <collision name="out_bot_c"><pose>-0.8 -5 0.5 0 0 0</pose><geometry><box><size>8.4 0.2 1</size></box></geometry></collision>
+        <visual name="out_bot"><pose>-0.8 -5 0.5 0 0 0</pose><geometry><box><size>8.4 0.2 1.5</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
+        <collision name="out_bot_c"><pose>-0.8 -5 0.5 0 0 0</pose><geometry><box><size>8.4 0.2 1.5</size></box></geometry></collision>
         
-        <visual name="out_left"><pose>-5 0 0.5 0 0 0</pose><geometry><box><size>0.2 10 1</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
-        <collision name="out_left_c"><pose>-5 0 0.5 0 0 0</pose><geometry><box><size>0.2 10 1</size></box></geometry></collision>
+        <visual name="out_left"><pose>-5 0 0.5 0 0 0</pose><geometry><box><size>0.2 10 1.5</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
+        <collision name="out_left_c"><pose>-5 0 0.5 0 0 0</pose><geometry><box><size>0.2 10 1.5</size></box></geometry></collision>
         
-        <visual name="out_right"><pose>5 0 0.5 0 0 0</pose><geometry><box><size>0.2 10 1</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
-        <collision name="out_right_c"><pose>5 0 0.5 0 0 0</pose><geometry><box><size>0.2 10 1</size></box></geometry></collision>
+        <visual name="out_right"><pose>5 0 0.5 0 0 0</pose><geometry><box><size>0.2 10 1.5</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
+        <collision name="out_right_c"><pose>5 0 0.5 0 0 0</pose><geometry><box><size>0.2 10 1.5</size></box></geometry></collision>
 
-        <visual name="mid_top"><pose>-0.8 3.2 0.5 0 0 0</pose><geometry><box><size>8.2 0.2 1</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
-        <collision name="mid_top_c"><pose>-0.8 3.2 0.5 0 0 0</pose><geometry><box><size>8.2 0.2 1</size></box></geometry></collision>
+        <visual name="mid_top"><pose>-0.8 3.2 0.5 0 0 0</pose><geometry><box><size>8.2 0.2 1.5</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
+        <collision name="mid_top_c"><pose>-0.8 3.2 0.5 0 0 0</pose><geometry><box><size>8.2 0.2 1.5</size></box></geometry></collision>
 
-        <visual name="mid_bot"><pose>0.8 -3.2 0.5 0 0 0</pose><geometry><box><size>8.2 0.2 1</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
-        <collision name="mid_bot_c"><pose>0.8 -3.2 0.5 0 0 0</pose><geometry><box><size>8.2 0.2 1</size></box></geometry></collision>
+        <visual name="mid_bot"><pose>0.8 -3.2 0.5 0 0 0</pose><geometry><box><size>8.2 0.2 1.5</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
+        <collision name="mid_bot_c"><pose>0.8 -3.2 0.5 0 0 0</pose><geometry><box><size>8.2 0.2 1.5</size></box></geometry></collision>
 
-        <visual name="mid_left"><pose>-3.2 -0.8 0.5 0 0 0</pose><geometry><box><size>0.2 5 1</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
-        <collision name="mid_left_c"><pose>-3.2 -0.8 0.5 0 0 0</pose><geometry><box><size>0.2 5 1</size></box></geometry></collision>
+        <visual name="mid_left"><pose>-3.2 -0.8 0.5 0 0 0</pose><geometry><box><size>0.2 5 1.5</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
+        <collision name="mid_left_c"><pose>-3.2 -0.8 0.5 0 0 0</pose><geometry><box><size>0.2 5 1.5</size></box></geometry></collision>
 
-        <visual name="mid_right"><pose>3.2 0.8 0.5 0 0 0</pose><geometry><box><size>0.2 5 1</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
-        <collision name="mid_right_c"><pose>3.2 0.8 0.5 0 0 0</pose><geometry><box><size>0.2 5 1</size></box></geometry></collision>
+        <visual name="mid_right"><pose>3.2 0.8 0.5 0 0 0</pose><geometry><box><size>0.2 5 1.5</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
+        <collision name="mid_right_c"><pose>3.2 0.8 0.5 0 0 0</pose><geometry><box><size>0.2 5 1.5</size></box></geometry></collision>
 
-        <visual name="in_top"><pose>0.7 1.4 0.5 0 0 0</pose><geometry><box><size>5 0.2 1</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
-        <collision name="in_top_c"><pose>0.7 1.4 0.5 0 0 0</pose><geometry><box><size>5 0.2 1</size></box></geometry></collision>
+        <visual name="in_top"><pose>0.7 1.4 0.5 0 0 0</pose><geometry><box><size>5 0.2 1.5</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
+        <collision name="in_top_c"><pose>0.7 1.4 0.5 0 0 0</pose><geometry><box><size>5 0.2 1.5</size></box></geometry></collision>
 
-        <visual name="in_bot"><pose>-0.7 -1.4 0.5 0 0 0</pose><geometry><box><size>5 0.2 1</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
-        <collision name="in_bot_c"><pose>-0.7 -1.4 0.5 0 0 0</pose><geometry><box><size>5 0.2 1</size></box></geometry></collision>
+        <visual name="in_bot"><pose>-0.7 -1.4 0.5 0 0 0</pose><geometry><box><size>5 0.2 1.5</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
+        <collision name="in_bot_c"><pose>-0.7 -1.4 0.5 0 0 0</pose><geometry><box><size>5 0.2 1.5</size></box></geometry></collision>
 
-        <visual name="in_left"><pose>-1.4 0.7 0.5 0 0 0</pose><geometry><box><size>0.2 1.6 1</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
-        <collision name="in_left_c"><pose>-1.4 0.7 0.5 0 0 0</pose><geometry><box><size>0.2 1.6 1</size></box></geometry></collision>
+        <visual name="in_left"><pose>-1.4 0.7 0.5 0 0 0</pose><geometry><box><size>0.2 1.6 1.5</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
+        <collision name="in_left_c"><pose>-1.4 0.7 0.5 0 0 0</pose><geometry><box><size>0.2 1.6 1.5</size></box></geometry></collision>
 
-        <visual name="in_right"><pose>1.4 -0.7 0.5 0 0 0</pose><geometry><box><size>0.2 1.6 1</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
-        <collision name="in_right_c"><pose>1.4 -0.7 0.5 0 0 0</pose><geometry><box><size>0.2 1.6 1</size></box></geometry></collision>
+        <visual name="in_right"><pose>1.4 -0.7 0.5 0 0 0</pose><geometry><box><size>0.2 1.6 1.5</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
+        <collision name="in_right_c"><pose>1.4 -0.7 0.5 0 0 0</pose><geometry><box><size>0.2 1.6 1.5</size></box></geometry></collision>
 
-        <visual name="center_stub"><pose>0 0.2 0.5 0 0 0</pose><geometry><box><size>0.2 1.2 1</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
-        <collision name="center_stub_c"><pose>0 0.2 0.5 0 0 0</pose><geometry><box><size>0.2 1.2 1</size></box></geometry></collision>
+        <visual name="center_stub"><pose>0 0.2 0.5 0 0 0</pose><geometry><box><size>0.2 1.2 1.5</size></box></geometry><material><ambient>0.05 0.05 0.05 1</ambient></material></visual>
+        <collision name="center_stub_c"><pose>0 0.2 0.5 0 0 0</pose><geometry><box><size>0.2 1.2 1.5</size></box></geometry></collision>
       </link>
     </model>
   </world>
