@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+  <world name="maze_world">
+    <physics type="ode">
+      <real_time_update_rate>1000.0</real_time_update_rate>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>50</iters>
+        </solver>
+      </ode>
+    </physics>
+
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+    <!-- <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/> -->
+
+    <light name="maze_sun" type="directional">
+      <pose>0 0 10 0 0 0</pose>
+      <direction>-0.5 0.5 -1</direction>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+    </light>
+
+    <model name="ground">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><plane><normal>0 0 1</normal><size>20 20</size></plane></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><plane><normal>0 0 1</normal><size>20 20</size></plane></geometry>
+          <material><ambient>0.5 0.5 0.5 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="spiral_maze_scaled">
+      <static>true</static>
+      <link name="walls">
+        <visual name="out_top"><pose>0 3 0.25 0 0 0</pose><geometry><box><size>6.0 0.15 0.5</size></box></geometry></visual>
+        <collision name="out_top_c"><pose>0 3 0.25 0 0 0</pose><geometry><box><size>6.0 0.15 0.5</size></box></geometry></collision>
+        
+        <visual name="out_bot"><pose>-0.5 -3 0.25 0 0 0</pose><geometry><box><size>5.0 0.15 0.5</size></box></geometry></visual>
+        <collision name="out_bot_c"><pose>-0.5 -3 0.25 0 0 0</pose><geometry><box><size>5.0 0.15 0.5</size></box></geometry></collision>
+        
+        <visual name="out_left"><pose>-3 0 0.25 0 0 0</pose><geometry><box><size>0.15 6.0 0.5</size></box></geometry></visual>
+        <collision name="out_left_c"><pose>-3 0 0.25 0 0 0</pose><geometry><box><size>0.15 6.0 0.5</size></box></geometry></collision>
+        
+        <visual name="out_right"><pose>3 0 0.25 0 0 0</pose><geometry><box><size>0.15 6.0 0.5</size></box></geometry></visual>
+        <collision name="out_right_c"><pose>3 0 0.25 0 0 0</pose><geometry><box><size>0.15 6.0 0.5</size></box></geometry></collision>
+
+        <visual name="mid_top"><pose>-0.5 1.8 0.25 0 0 0</pose><geometry><box><size>4.8 0.15 0.5</size></box></geometry></visual>
+        <collision name="mid_top_c"><pose>-0.5 1.8 0.25 0 0 0</pose><geometry><box><size>4.8 0.15 0.5</size></box></geometry></collision>
+
+        <visual name="mid_bot"><pose>0.5 -1.8 0.25 0 0 0</pose><geometry><box><size>4.8 0.15 0.5</size></box></geometry></visual>
+        <collision name="mid_bot_c"><pose>0.5 -1.8 0.25 0 0 0</pose><geometry><box><size>4.8 0.15 0.5</size></box></geometry></collision>
+
+        <visual name="mid_left"><pose>-1.8 -0.5 0.25 0 0 0</pose><geometry><box><size>0.15 3.0 0.5</size></box></geometry></visual>
+        <collision name="mid_left_c"><pose>-1.8 -0.5 0.25 0 0 0</pose><geometry><box><size>0.15 3.0 0.5</size></box></geometry></collision>
+
+        <visual name="mid_right"><pose>1.8 0.5 0.25 0 0 0</pose><geometry><box><size>0.15 3.0 0.5</size></box></geometry></visual>
+        <collision name="mid_right_c"><pose>1.8 0.5 0.25 0 0 0</pose><geometry><box><size>0.15 3.0 0.5</size></box></geometry></collision>
+
+        <visual name="in_top"><pose>0.4 0.8 0.25 0 0 0</pose><geometry><box><size>2.8 0.15 0.5</size></box></geometry></visual>
+        <collision name="in_top_c"><pose>0.4 0.8 0.25 0 0 0</pose><geometry><box><size>2.8 0.15 0.5</size></box></geometry></collision>
+
+        <visual name="in_bot"><pose>-0.4 -0.8 0.25 0 0 0</pose><geometry><box><size>2.8 0.15 0.5</size></box></geometry></visual>
+        <collision name="in_bot_c"><pose>-0.4 -0.8 0.25 0 0 0</pose><geometry><box><size>2.8 0.15 0.5</size></box></geometry></collision>
+
+        <visual name="center_stub"><pose>0 0.1 0.25 0 0 0</pose><geometry><box><size>0.15 0.8 0.5</size></box></geometry></visual>
+        <collision name="center_stub_c"><pose>0 0.1 0.25 0 0 0</pose><geometry><box><size>0.15 0.8 0.5</size></box></geometry></collision>
+      </link>
+    </model>
+  </world>
+</sdf>
